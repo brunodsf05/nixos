@@ -17,8 +17,8 @@
           nixos-wsl.nixosModules.default
           home-manager.nixosModules.home-manager
           { networking.hostName = "wsl"; }
-          ./home.nix
-          ./system.nix
+          ./modules/home
+          ./modules/system.nix
         ];
       };
     };
