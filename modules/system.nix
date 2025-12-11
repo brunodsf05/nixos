@@ -12,6 +12,10 @@
     "flakes"
   ];
 
+  environment.systemPackages = with pkgs; [
+  	wget
+  ];
+
   programs.nh = {
     enable = true;
     flake = "/home/nixos/nixos";
