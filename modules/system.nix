@@ -16,4 +16,6 @@
     enable = true;
     flake = "/home/nixos/nixos";
   };
+
+  programs.nix-ld.enable = true;
 }
