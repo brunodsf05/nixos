@@ -23,11 +23,8 @@
         inherit inputs;
       };
       modules = [
-        nixos-wsl.nixosModules.default
-        home-manager.nixosModules.home-manager
+        ./nix/hosts/${host}
         { networking.hostName = host; }
-        ./modules/home
-        ./modules/system.nix
       ];
     };
   in
