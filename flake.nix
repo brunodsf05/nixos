@@ -7,6 +7,8 @@
 
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    import-tree.url = "github:vic/import-tree";
   };
 
   outputs = inputs@{
@@ -17,12 +19,23 @@
     ...
   }:
   let
+    modulesFolder = ./nix/modules;
+
     mkHost = host: system: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
         inherit inputs;
+        global = {
+          fun = {
+            mkModule = import ./nix/lib/mk_module.nix {
+              prefix = "myfeatures";
+              modulesPath = modulesFolder;
+            };
+          };
+        };
       };
       modules = [
+        { imports = [(inputs.import-tree modulesFolder)]; }
         ./nix/hosts/${host}
         { networking.hostName = host; }
       ];
