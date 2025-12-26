@@ -7,9 +7,11 @@
   wsl.defaultUser = "nixos";
   wsl.interop.includePath = false;
 
+  # TODO: Move all of this and make it global
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+    "pipe-operators"
   ];
 
   environment.systemPackages = with pkgs; [
