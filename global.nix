@@ -7,7 +7,7 @@ rec {
 
   fun = {
     mkModule = import ./nix/lib/mk_module.nix {
-      prefix = "myfeatures";
+      prefix = "my";
       modulesPath = cfg.path.modules;
     };
   };

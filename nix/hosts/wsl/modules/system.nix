@@ -18,5 +18,5 @@
 
   programs.nix-ld.enable = true;
 
-  myfeatures.hello.enable = true;
+  my.hello.enable = true;
 }
