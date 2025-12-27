@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Profile selector
+# --- PROFILE SELECTOR --- #
 profiles=("wsl")
 index=0
 
@@ -66,7 +66,7 @@ stty echo
 
 chosen="${profiles[$index]}"
 
-# Countdown before installing
+# --- PROFILE SELECTOR --- #
 seconds=5
 echo
 for ((n=seconds; n>=1; n--)); do
@@ -88,7 +88,7 @@ sudo \
   nix-shell -p git --run \
   "nixos-rebuild switch --flake \".#$chosen\""
 
-# Postinstall
+# --- POST INSTALLATION --- #
 echo
 echo "Welcome!"
 echo
