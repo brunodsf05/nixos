@@ -69,7 +69,9 @@ if builtins.match ".*/.*" prefix != null then
   throw "Error: prefix '${prefix}' cannot contain '/'"
 else
 let
+  # Functions
   str = import ./strings.nix;
+
   fun = {
     getAttrFromPath =
       path: set:
@@ -90,6 +92,11 @@ let
         in
           atDepth 0;
   };
+
+  # Shared
+  prefixList =
+    builtins.filter builtins.isString
+      (builtins.split "/" prefix);
 in
   path: # Just write `./` to reference the actual file. If null, `modulesPath` is used
   config: # From nixpkgs
@@ -111,10 +118,6 @@ in
         |> (str.removeSuffix "/default");
 
     # Example: "system/locale" -> [ "system" "locale" ]
-    prefixList =
-      builtins.filter builtins.isString
-        (builtins.split "/" prefix);
-
     pathList =
       builtins.filter builtins.isString
         (builtins.split "/" "${prefix}/${basePath}");
