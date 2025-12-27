@@ -8,7 +8,8 @@ Right now it declares a [WSL](https://learn.microsoft.com/en-us/windows/wsl/abou
 
 ## Instalation
 
-Copy the line below in a terminal. This will clone the flake and start the install script:
+Copy the line below in a terminal.
+This will clone the flake, prompt you to select a profile and install it:
 ```sh
-nix-shell -p git --run "cd ~ && git clone https://github.com/brunodsf05/nixos.git && ~/nixos/install.sh"
+curl -fsSL https://raw.githubusercontent.com/brunodsf05/nixos/main/install.sh | bash
 ```

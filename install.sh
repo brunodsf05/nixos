@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# --- INITIALIZE SCRIPT --- #
+set -e
+
+REPO_URL="https://github.com/brunodsf05/nixos.git"
+REPO_SRC="$HOME/nixos"
+
+# --- CLONE THE CONFIG IF RUNNING FROM CURL --- # 
+if [ ! -f "$REPO_SRC/flake.nix" ] || [ ! -f "$REPO_SRC/install.sh" ]; then
+    nix-shell -p git --run "git clone \"$REPO_URL\" \"$REPO_SRC\""
+fi
+
 # --- PROFILE SELECTOR --- #
 profiles=("wsl")
 index=0
@@ -86,7 +97,7 @@ echo
 sudo \
   NIX_CONFIG="experimental-features = nix-command flakes" \
   nix-shell -p git --run \
-  "nixos-rebuild switch --flake \".#$chosen\""
+  "nixos-rebuild switch --flake \"$REPO_SRC#$chosen\""
 
 # --- POST INSTALLATION --- #
 echo
