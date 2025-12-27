@@ -95,4 +95,4 @@ echo
 fastfetch
 echo
 echo 'It is recommended to run restart your system and perform an "nh os clean"'
-echo 'For wsl execute "wsl --shutdown"'
+[ "$chosen" = "wsl" ] && echo 'For WSL execute "wsl --shutdown"'
