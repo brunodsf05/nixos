@@ -73,6 +73,11 @@ let
   str = import ./strings.nix;
 
   fun = {
+    pathToLeafs =
+      path:
+        builtins.filter builtins.isString
+          (builtins.split "/" path);
+
     getAttrFromPath =
       path: set:
         builtins.foldl'
@@ -94,9 +99,7 @@ let
   };
 
   # Shared
-  prefixList =
-    builtins.filter builtins.isString
-      (builtins.split "/" prefix);
+  prefixList = fun.pathToLeafs prefix;
 in
   path: # Just write `./` to reference the actual file. If null, `modulesPath` is used
   config: # From nixpkgs
@@ -118,9 +121,7 @@ in
         |> (str.removeSuffix "/default");
 
     # Example: "system/locale" -> [ "system" "locale" ]
-    pathList =
-      builtins.filter builtins.isString
-        (builtins.split "/" "${prefix}/${basePath}");
+    pathList = fun.pathToLeafs "${prefix}/${basePath}";
 
     # Generate returned
     cfg = fun.getAttrFromPath pathList config;
