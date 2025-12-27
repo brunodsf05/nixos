@@ -19,23 +19,16 @@
     ...
   }:
   let
-    modulesFolder = ./nix/modules;
+    global = import ./global.nix;
 
     mkHost = host: system: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
         inherit inputs;
-        global = {
-          fun = {
-            mkModule = import ./nix/lib/mk_module.nix {
-              prefix = "myfeatures";
-              modulesPath = modulesFolder;
-            };
-          };
-        };
+        inherit global;
       };
       modules = [
-        { imports = [(inputs.import-tree modulesFolder)]; }
+        { imports = [(inputs.import-tree global.cfg.path.modules)]; }
         ./nix/hosts/${host}
         { networking.hostName = host; }
       ];
