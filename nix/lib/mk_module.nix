@@ -91,20 +91,24 @@ let
           atDepth 0;
   };
 in
-  path: # Just write `./` to reference the actual file
+  path: # Just write `./` to reference the actual file. If null, `modulesPath` is used
   config: # From nixpkgs
 
   let
     # Transform `path` from absolute to relative
+    # `null` can be used to read `cfgRoot`
     # Examples:
     #   "/nix/store/hash/modules/system/locale.nix" -> "system/locale"
     #   "/nix/store/hash/modules/gui/cosmic/default.nix" -> "gui/cosmic"
     basePath =
-      path
-      |> toString
-      |> (str.removePrefix (toString modulesPath + "/"))
-      |> (str.removeSuffix ".nix")
-      |> (str.removeSuffix "/default");
+      if path == null then
+        ""
+      else
+        path
+        |> toString
+        |> (str.removePrefix (toString modulesPath + "/"))
+        |> (str.removeSuffix ".nix")
+        |> (str.removeSuffix "/default");
 
     # Example: "system/locale" -> [ "system" "locale" ]
     prefixList =
