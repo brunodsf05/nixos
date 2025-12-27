@@ -7,16 +7,11 @@
   wsl.defaultUser = "nixos";
   wsl.interop.includePath = false;
 
-  environment.systemPackages = with pkgs; [
-  	wget
-  ];
-
   programs.nh = {
     enable = true;
     flake = "/home/nixos/nixos";
   };
 
-  programs.nix-ld.enable = true;
-
   my.hello.enable = true;
+  my.vscode_remote.enable = true;
 }
