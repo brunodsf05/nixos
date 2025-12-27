@@ -95,7 +95,7 @@ printf "\r\033[K\033[36mInstalling $chosen!\033[0m\n"
 echo
 
 sudo \
-  NIX_CONFIG="experimental-features = nix-command flakes" \
+  NIX_CONFIG="experimental-features = nix-command flakes pipe-operators" \
   nix-shell -p git --run \
   "nixos-rebuild switch --flake \"$REPO_SRC#$chosen\""
 
