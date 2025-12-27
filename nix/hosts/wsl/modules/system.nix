@@ -12,6 +12,7 @@
     flake = "/home/nixos/nixos";
   };
 
+  my.host.main_user.name = "nixos";
   my.hello.enable = true;
   my.vscode_remote.enable = true;
 }
