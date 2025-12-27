@@ -107,13 +107,17 @@ in
       |> (str.removeSuffix "/default");
 
     # Example: "system/locale" -> [ "system" "locale" ]
+    prefixList =
+      builtins.filter builtins.isString
+        (builtins.split "/" prefix);
+
     pathList =
       builtins.filter builtins.isString
         (builtins.split "/" "${prefix}/${basePath}");
 
     # Generate returned
     cfg = fun.getAttrFromPath pathList config;
-    cfgRoot = fun.getAttrFromPath prefix config;
+    cfgRoot = fun.getAttrFromPath prefixList config;
     wrapInModule = fun.setAttrByPath pathList;
   in
   {
