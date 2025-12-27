@@ -6,7 +6,7 @@ Welcome to my personal **dotfiles**!
 
 Right now it declares a [WSL](https://learn.microsoft.com/en-us/windows/wsl/about) terminal with tools, aliases and more.
 
-## Instalation
+## Installation
 
 Copy the line below in a terminal.
 This will clone the flake, prompt you to select a profile and install it:
