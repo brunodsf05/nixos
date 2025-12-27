@@ -19,6 +19,10 @@
   let
     global = import ./global.nix;
 
+    automaticallyImportedModules = (
+      inputs.import-tree global.cfg.path.modules
+    );
+
     mkHost = host: system: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
@@ -26,7 +30,7 @@
         inherit global;
       };
       modules = [
-        { imports = [(inputs.import-tree global.cfg.path.modules)]; }
+        { imports = [(automaticallyImportedModules)]; }
         ./nix/hosts/${host}
         { networking.hostName = host; }
       ];
