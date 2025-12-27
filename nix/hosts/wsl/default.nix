@@ -3,9 +3,13 @@
   pkgs,
   lib,
   config,
+  global,
   ...
 }:
 
+let
+  inherit (global.fun.mkModule null config) cfgRoot;
+in
 {
   imports = [
     inputs.nixos-wsl.nixosModules.default
@@ -16,7 +20,7 @@
   system.stateVersion = "25.05";
 
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = cfgRoot.host.main_user.name;
   wsl.interop.includePath = false;
 
   my.nixos.nh.enable = true;
