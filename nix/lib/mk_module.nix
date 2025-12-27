@@ -120,7 +120,7 @@ in
         |> (str.removeSuffix ".nix")
         |> (str.removeSuffix "/default");
 
-    # Example: "system/locale" -> [ "system" "locale" ]
+    # Example: "my" and "system/locale" -> [ "my" "system" "locale" ]
     pathList = fun.pathToLeafs "${prefix}/${basePath}";
 
     # Generate returned
