@@ -7,11 +7,7 @@
   wsl.defaultUser = "nixos";
   wsl.interop.includePath = false;
 
-  programs.nh = {
-    enable = true;
-    flake = "/home/nixos/nixos";
-  };
-
+  my.nixos.nh.enable = true;
   my.host.main_user.name = "nixos";
   my.hello.enable = true;
   my.vscode_remote.enable = true;
