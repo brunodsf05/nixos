@@ -21,6 +21,5 @@
 
   my.nixos.nh.enable = true;
   my.host.main_user.name = "nixos";
-  my.hello.enable = true;
   my.vscode_remote.enable = true;
 }
