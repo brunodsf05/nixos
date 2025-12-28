@@ -12,7 +12,7 @@ if [ ! -f "$REPO_SRC/flake.nix" ] || [ ! -f "$REPO_SRC/install.sh" ]; then
 fi
 
 # --- PROFILE SELECTOR --- #
-profiles=("wsl")
+profiles=("wsl" "vm")
 index=0
 
 stty -echo

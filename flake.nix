@@ -44,6 +44,7 @@
   {
     nixosConfigurations = {
       wsl = mkHost "wsl" "x86_64-linux";
+      vm = mkHost "vm" "x86_64-linux";
     };
   };
 }
