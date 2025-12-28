@@ -56,8 +56,8 @@
   programs.micro = {
     enable = true;
     settings = {
-     	mkparents = true;
-     	colorscheme = "cmc-16";
+      mkparents = true;
+      colorscheme = "cmc-16";
     };
   };
 
