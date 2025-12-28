@@ -14,5 +14,16 @@ in
 
     services.desktopManager.cosmic.enable = true;
     services.desktopManager.cosmic.xwayland.enable = true;
+
+    # Software
+    environment.cosmic.excludePackages = with pkgs; [
+      cosmic-player
+      cosmic-store
+    ];
+
+    environment.systemPackages = with pkgs; [
+      kitty
+      bazaar
+    ];
   };
 }
