@@ -24,4 +24,14 @@
 
   # Hardware
   virtualisation.vmware.guest.enable = true;
+
+  # TODO: Move out of here
+  fonts = {
+    enableDefaultPackages = true;
+
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.cousine
+    ];
+  };
 }
