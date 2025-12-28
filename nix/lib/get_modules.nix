@@ -17,7 +17,7 @@ You can (optionally) configure the following:
 # Filter
 
 There are two:
-1. Ignore `.nix` files starting with `_`.
+1. Ignore folders and `.nix` files starting with `_`.
 2. If the current folder contains a `lastmodFilename`, then only imports
    the `default.nix` and stops the recursive importing of that folder.  
 
