@@ -18,5 +18,7 @@ in
 
   my.nixos.nh.enable = true;
   my.host.main_user.name = "nixos";
+  my.home.enable = true;
+  my.home.stateVersion = "25.11";
   my.vscode_remote.enable = true;
 }
