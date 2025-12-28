@@ -3,8 +3,9 @@
 let
   inherit (global.fun.mkModule __curPos.file config) cfg wrapInModule;
 
-  useIfWritten = value:
+  useIfWritten = optionName: value:
     lib.mkIf (value != "") (
+      global.log.trace.info "${optionName} is set to \"${value}\""
       value
     );
 in
@@ -36,10 +37,10 @@ in
   config = lib.mkIf cfg.enable
   {
     # Time zone
-    time.timeZone = useIfWritten cfg.overrides.timeZone;
+    time.timeZone = useIfWritten "Time zone" cfg.overrides.timeZone;
 
     # Language
-    i18n.defaultLocale = useIfWritten cfg.overrides.language;
+    i18n.defaultLocale = useIfWritten "Locale language" cfg.overrides.language;
     i18n.extraLocaleSettings = (
       let
         lang = cfg.overrides.language;
