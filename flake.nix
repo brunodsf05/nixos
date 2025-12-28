@@ -22,7 +22,7 @@
       logger = path: "[import] ${path}";
     };
 
-    automaticallyImportedModules = (
+    modules = (
       map import (getModules global.cfg.path.modules)
     );
 
@@ -33,7 +33,7 @@
         inherit global;
       };
       modules = [
-        { imports = automaticallyImportedModules; }
+        { imports = modules; }
         ./nix/hosts/${host}
         { networking.hostName = host; }
       ];
