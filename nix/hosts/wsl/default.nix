@@ -10,13 +10,12 @@ in
     ./modules/home
   ];
 
-  system.stateVersion = "25.05";
-
   wsl.enable = true;
   wsl.defaultUser = cfgRoot.host.main_user.name;
   wsl.interop.includePath = false;
 
   my.nixos.nh.enable = true;
+  my.nixos.system.stateVersion = "25.05";
   my.host.main_user.name = "nixos";
   my.home.enable = true;
   my.home.stateVersion = "25.11";
