@@ -19,5 +19,5 @@
     stateVersion = "25.11";
   };
 
-  my.vscode_remote.enable = true;
+  my.development.vscode_remote.enable = true;
 }
