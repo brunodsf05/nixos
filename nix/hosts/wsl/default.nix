@@ -8,7 +8,6 @@ in
     inputs.nixos-wsl.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
     ./my.nix
-    ./modules/home
   ];
 
   wsl.enable = true;
