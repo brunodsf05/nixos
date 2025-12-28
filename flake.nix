@@ -9,11 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{
-    self,
-    nixpkgs,
-    ...
-  }:
+  outputs = inputs@{ self, nixpkgs, ... }:
   let
     global = import ./global.nix;
 
