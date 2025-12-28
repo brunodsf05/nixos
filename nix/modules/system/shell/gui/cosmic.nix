@@ -19,6 +19,7 @@ in
     environment.cosmic.excludePackages = with pkgs; [
       cosmic-player
       cosmic-store
+      cosmic-term
     ];
 
     environment.systemPackages = with pkgs; [
