@@ -7,6 +7,9 @@
 
   # Software
   nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = with pkgs; [
+  	brave
+  ];
 
   # Networking
   networking.networkmanager.enable = true;
