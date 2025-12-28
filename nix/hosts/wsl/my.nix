@@ -19,6 +19,8 @@
     stateVersion = "25.11";
   };
 
-  my.development.git.enable = true;
-  my.development.vscode_remote.enable = true;
+  my.development = {
+    git.enable = true;
+    vscode_remote.enable = true;
+  };
 }
