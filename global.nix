@@ -6,6 +6,17 @@ rec {
     };
   };
 
+  log = import ./nix/lib/logger.nix {
+    prefix = cfg.os.name;
+    suffixes = [
+      "config"
+      "flatpak"
+      "import"
+      "info"
+      "error"
+    ];
+  };
+
   fun = {
     mkModule = import ./nix/lib/mk_module.nix {
       prefix = "my";
