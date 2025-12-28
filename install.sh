@@ -3,8 +3,15 @@
 # --- INITIALIZE SCRIPT --- #
 set -e
 
+LOG_FILE="$HOME/nixos-install.log"
 REPO_URL="https://github.com/brunodsf05/nixos.git"
 REPO_SRC="$HOME/nixos"
+
+exec > >(tee -a "$LOG_FILE") 2>&1
+
+trap 'stty echo' EXIT
+trap 'echo "[ERROR] Line $LINENO failed. Exit code: $?"' ERR
+trap 'echo "[ERROR] Checkout $LOG_FILE"' ERR
 
 # --- CLONE THE CONFIG IF RUNNING FROM CURL --- # 
 if [ ! -f "$REPO_SRC/flake.nix" ] || [ ! -f "$REPO_SRC/install.sh" ]; then
@@ -16,10 +23,9 @@ profiles=("wsl" "vm")
 index=0
 
 stty -echo
-trap 'stty echo; clear' EXIT
 
 while true; do
-    printf "\033c"
+    clear
     cat <<EOF
           ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖
           ▜███▙       ▜███▙  ▟███▛
