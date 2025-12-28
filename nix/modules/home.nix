@@ -29,7 +29,6 @@ in
     home-manager.users.${mainUser} = {
       imports = cfg.imports;
       home.stateVersion = cfg.stateVersion;
-      programs.home-manager.enable = true;
     };
   };
 }
