@@ -17,15 +17,6 @@
   let
     global = import ./global.nix;
 
-    getModules = import ./nix/lib/get_modules.nix {
-      lastmodFilename = ".lastmod";
-      logger = path: "[import] ${path}";
-    };
-
-    modules = (
-      map import (getModules global.cfg.path.modules)
-    );
-
     mkHost = host: system: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
@@ -33,7 +24,7 @@
         inherit global;
       };
       modules = [
-        { imports = modules; }
+        { imports = global.fun.importModules; }
         ./nix/hosts/${host}
         { networking.hostName = host; }
       ];
