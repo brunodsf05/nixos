@@ -4,6 +4,9 @@ rec {
     path = {
       modules = ./nix/modules;
     };
+    mainUser.config = {
+      description = "Bruno";
+    };
   };
 
   log = import ./nix/lib/logger.nix {
