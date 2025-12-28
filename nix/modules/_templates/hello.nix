@@ -5,7 +5,8 @@ let
 in
 {
   options = wrapInModule {
-    enable = lib.mkEnableOption "Enable the hello command.";
+    # lib.mkEnableOption generates a description like "Whether to enable ${description}."
+    enable = lib.mkEnableOption "hello command";
   };
 
   config = lib.mkIf cfg.enable
