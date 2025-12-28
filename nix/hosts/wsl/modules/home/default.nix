@@ -4,7 +4,6 @@
   home-manager.users.nixos = {
     imports = [
       ./development.nix
-      ./shell
     ];
   };
 }

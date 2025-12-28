@@ -6,6 +6,10 @@
     system.stateVersion = "25.05";
   };
 
+  my.system.shell.cli = {
+    enable = true;
+  };
+
   my.host.main_user = {
     name = "nixos";
   };
