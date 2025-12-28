@@ -1,5 +1,6 @@
 rec {
   cfg = {
+    os.name = "neosh";
     path = {
       modules = ./nix/modules;
     };
