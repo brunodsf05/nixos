@@ -16,6 +16,7 @@ profiles=("wsl" "vm")
 index=0
 
 stty -echo
+trap 'stty echo; clear' EXIT
 
 while true; do
     printf "\033c"
@@ -62,8 +63,8 @@ EOF
     if [[ "$key" == $'\x1b' ]]; then
         read -rsn2 key
         case "$key" in
-            "[A") ((index--)) ;;   # Up
-            "[B") ((index++)) ;;   # Down
+            "[A") index=$((index - 1)) ;;  # Up
+            "[B") index=$((index + 1)) ;;  # Down
         esac
     elif [[ "$key" == "" ]]; then
         break
