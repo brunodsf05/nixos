@@ -8,6 +8,7 @@
     ff = "fastfetch";
     gita = "git add .";
     gitc = "git commit -m";
+    gitca = "git commit --amend";
     gitl = "git log --all --graph --oneline";
     gits = "git status";
   };
