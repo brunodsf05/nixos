@@ -2,22 +2,20 @@
 
 {
   my.system = {
-    home = {
-      enable = true;
-      stateVersion = "25.11";
+    platform = {
+      nixos.nh.enable = true;
+      nixos.system.stateVersion = "25.05";
+
+      home.enable = true;
+      home.stateVersion = "25.11";
     };
 
-    host.main_user = {
-      name = "nixos";
+    host = {
+      main_user.name = "nixos";
     };
 
-    nixos = {
-      nh.enable = true;
-      system.stateVersion = "25.05";
-    };
-
-    shell.cli = {
-      enable = true;
+    shell = {
+      cli.enable = true;
     };
   };
 

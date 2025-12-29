@@ -2,38 +2,32 @@
 
 {
   my.system = {
-    home = {
-      enable = true;
-      stateVersion = "25.11";
+    platform = {
+      nixos.nh.enable = true;
+      nixos.system.stateVersion = "25.11";
+
+      home.enable = true;
+      home.stateVersion = "25.11";
     };
 
-    host.main_user = {
-      name = "bruno";
-      config = {
-        isNormalUser = true;
-        extraGroups = [ "networkmanager" "wheel" ];
+    host = {
+      main_user = {
+        name = "bruno";
+        config = {
+          isNormalUser = true;
+          extraGroups = [ "networkmanager" "wheel" ];
+        };
       };
     };
 
-    locale = {
-      enable = true;
+    shell = {
+      cli.enable = true;
+      gui.cosmic.enable = true;
     };
 
-    nixos = {
-      nh.enable = true;
-      system.stateVersion = "25.11";
-    };
-
-    shell.cli = {
-      enable = true;
-    };
-
-    shell.gui = {
-      cosmic.enable = true;
-    };
-
-    software.executable = {
-      enable = true;
+    environment = {
+      locale.enable = true;
+      software.executable.enable = true;
     };
   };
 

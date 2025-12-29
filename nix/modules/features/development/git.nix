@@ -10,7 +10,7 @@ in
 
   config = lib.mkIf cfg.enable
   {
-    my.system.home.imports = [
+    my.system.platform.home.imports = [
       ({ ... }: {
         programs.git = {
           enable = true;
