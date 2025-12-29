@@ -22,6 +22,10 @@
     };
   };
 
+  my.system.software.executable = {
+    enable = true;
+  };
+
   my.system.home = {
     enable = true;
     stateVersion = "25.11";
