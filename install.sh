@@ -88,7 +88,7 @@ stty echo
 chosen="${profiles[$index]}"
 
 # --- COUNTDOWN --- #
-seconds=5
+seconds=3
 echo
 for ((n=seconds; n>=1; n--)); do
   printf "\r\033[K\033[31m"
