@@ -31,6 +31,10 @@
     stateVersion = "25.11";
   };
 
+  my.system.locale = {
+    enable = true;
+  };
+
   my.development = {
     git.enable = true;
     vscode_remote.enable = true;
