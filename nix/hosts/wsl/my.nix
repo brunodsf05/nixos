@@ -1,7 +1,7 @@
 { config, global, inputs, lib, pkgs, ... }:
 
 {
-  my.nixos = {
+  my.system.nixos = {
     nh.enable = true;
     system.stateVersion = "25.05";
   };
