@@ -5,7 +5,7 @@ let
 in
 {
   options = wrapInModule {
-    enable = lib.mkEnableOption "compatibility to become a VScode Remote features.development host";
+    enable = lib.mkEnableOption "compatibility to become a VScode Remote development host";
   };
 
   config = lib.mkIf cfg.enable
