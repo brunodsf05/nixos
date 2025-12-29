@@ -1,41 +1,45 @@
 { config, global, inputs, lib, pkgs, ... }:
 
 {
-  my.system.nixos = {
-    nh.enable = true;
-    system.stateVersion = "25.11";
-  };
+  my.system = {
+    home = {
+      enable = true;
+      stateVersion = "25.11";
+    };
 
-  my.system.shell.cli = {
-    enable = true;
-  };
+    host.main_user = {
+      name = "bruno";
+      config = {
+        isNormalUser = true;
+        extraGroups = [ "networkmanager" "wheel" ];
+      };
+    };
 
-  my.system.shell.gui = {
-    cosmic.enable = true;
-  };
+    locale = {
+      enable = true;
+    };
 
-  my.system.host.main_user = {
-    name = "bruno";
-    config = {
-      isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" ];
+    nixos = {
+      nh.enable = true;
+      system.stateVersion = "25.11";
+    };
+
+    shell.cli = {
+      enable = true;
+    };
+
+    shell.gui = {
+      cosmic.enable = true;
+    };
+
+    software.executable = {
+      enable = true;
     };
   };
 
-  my.system.software.executable = {
-    enable = true;
-  };
-
-  my.system.home = {
-    enable = true;
-    stateVersion = "25.11";
-  };
-
-  my.system.locale = {
-    enable = true;
-  };
-
-  my.features.development = {
-    git.enable = true;
+  my.features = {
+    development = {
+      git.enable = true;
+    };
   };
 }
