@@ -14,7 +14,7 @@
     cosmic.enable = true;
   };
 
-  my.host.main_user = {
+  my.system.host.main_user = {
     name = "bruno";
     config = {
       isNormalUser = true;

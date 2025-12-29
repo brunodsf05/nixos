@@ -2,7 +2,7 @@
 
 let
   inherit (global.fun.mkModule __curPos.file config) cfg cfgRoot wrapInModule;
-  mainUser = cfgRoot.host.main_user.name;
+  mainUser = cfgRoot.system.host.main_user.name;
 in
 {
   options = wrapInModule {
