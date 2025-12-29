@@ -33,6 +33,7 @@
 
   my.features = {
     development = {
+      editor.enable = true;
       git.enable = true;
     };
   };
