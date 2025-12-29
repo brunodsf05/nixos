@@ -87,7 +87,7 @@ stty echo
 
 chosen="${profiles[$index]}"
 
-# --- PROFILE SELECTOR --- #
+# --- COUNTDOWN --- #
 seconds=5
 echo
 for ((n=seconds; n>=1; n--)); do
