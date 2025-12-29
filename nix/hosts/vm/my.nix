@@ -32,6 +32,7 @@
   };
 
   my.features = {
+    apps.enable = true;
     development = {
       editor.enable = true;
       git.enable = true;
