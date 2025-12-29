@@ -21,8 +21,8 @@ fi
 # --- PROFILE SELECTOR --- #
 index=0
 profiles=(
-    "wsl"
     "vm"
+    "wsl"
 )
 
 stty -echo
