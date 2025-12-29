@@ -37,6 +37,5 @@
 
   my.features.development = {
     git.enable = true;
-    vscode_remote.enable = true;
   };
 }
