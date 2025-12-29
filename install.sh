@@ -100,7 +100,7 @@ for ((n=seconds; n>=1; n--)); do
   printf "\033[0m"
 done
 
-# Install
+# --- INSTALLATION --- #
 printf "\r\033[K\033[36mInstalling $chosen!\033[0m\n"
 echo
 
