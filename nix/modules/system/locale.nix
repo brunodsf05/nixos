@@ -59,7 +59,7 @@ in
     );
 
     # English XDG folders
-    my.home.imports = lib.mkIf cfg.overrides.forceEnglishXdgFolders [
+    my.system.home.imports = lib.mkIf cfg.overrides.forceEnglishXdgFolders [
       ({ config, ... }: {
         xdg.userDirs = {
           enable = true;

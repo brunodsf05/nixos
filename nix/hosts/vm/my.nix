@@ -22,7 +22,7 @@
     };
   };
 
-  my.home = {
+  my.system.home = {
     enable = true;
     stateVersion = "25.11";
   };

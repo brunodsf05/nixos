@@ -10,7 +10,7 @@ in
 
   config = lib.mkIf cfg.enable
   {
-    my.home.imports = [
+    my.system.home.imports = [
       ./module.nix
     ];
   };
