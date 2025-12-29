@@ -107,13 +107,8 @@ echo
 sudo \
   NIX_CONFIG="experimental-features = nix-command flakes pipe-operators" \
   nix-shell -p git --run \
-  "nixos-rebuild switch --flake \"$REPO_SRC#$chosen\""
+  "nixos-rebuild boot --flake \"$REPO_SRC#$chosen\""
 
 # --- POST INSTALLATION --- #
-echo
-echo "Welcome!"
-echo
-fastfetch
-echo
-echo 'It is recommended to run restart your system and perform an "nh clean all"'
+echo 'It is recommended restart your system and perform an "nh clean all"'
 [ "$chosen" = "wsl" ] && echo 'For WSL execute "wsl --shutdown"'
