@@ -1,7 +1,8 @@
 { config, global, inputs, lib, pkgs, ... }:
 
 let
-  inherit (global.fun.mkModule __curPos.file config) cfg wrapInModule;
+  inherit (global.fun.mkModule __curPos.file config) cfg cfgRoot wrapInModule;
+  mainUser = cfgRoot.system.host.main_user.name;
 in
 {
   options = wrapInModule {
@@ -39,16 +40,10 @@ in
     };
 
     # DankGreeter
-    programs.dms-greeter.enable = true;
-
-    services.greetd = {
+    services.displayManager.dms-greeter = {
       enable = true;
-      settings = {
-        default_session = {
-          command = "dms-greeter";
-          user = "greeter";
-        };
-      };
+      compositor.name = "niri";
+      configHome = "/home/${mainUser}";
     };
   };
 }

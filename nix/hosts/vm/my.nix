@@ -22,7 +22,7 @@
 
     shell = {
       cli.enable = true;
-      gui.cosmic.enable = true;
+      gui.niri.enable = true;
     };
 
     environment = {
