@@ -26,5 +26,27 @@ in
       kitty
       bazaar
     ];
+
+    # Default applications
+    environment.sessionVariables = {
+      TERMINAL = "kitty";
+      XTERM = "kitty";
+    };
+
+    xdg.mime.enable = true;
+    xdg.mime.defaultApplications = (
+      let
+        app = {
+          browser = "firefox.desktop";
+          terminal = "kitty.desktop";
+        };
+      in
+      {
+        "text/html" = app.browser;
+        "x-scheme-handler/http" = app.browser;
+        "x-scheme-handler/https" = app.browser;
+        "application/x-terminal-emulator" = app.terminal;
+      }
+    );
   };
 }
