@@ -33,8 +33,7 @@ in
       XTERM = "kitty";
     };
 
-    xdg.mime.enable = true;
-    xdg.mime.defaultApplications = (
+    xdg = (
       let
         app = {
           browser = "firefox.desktop";
@@ -42,10 +41,24 @@ in
         };
       in
       {
-        "text/html" = app.browser;
-        "x-scheme-handler/http" = app.browser;
-        "x-scheme-handler/https" = app.browser;
-        "application/x-terminal-emulator" = app.terminal;
+        mime = {
+          enable = true;
+          defaultApplications = {
+            "text/html" = app.browser;
+            "x-scheme-handler/http" = app.browser;
+            "x-scheme-handler/https" = app.browser;
+            "application/x-terminal-emulator" = app.terminal;
+          };
+        };
+
+        terminal-exec = {
+          enable = true;
+          settings = {
+            default = [
+              app.terminal
+            ];
+          };
+        };
       }
     );
   };
