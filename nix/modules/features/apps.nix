@@ -17,7 +17,7 @@ in
       inkscape
       keepassxc
       qbittorrent
-      stremio
+      # stremio
       thunderbird
       upscaler
     ];
