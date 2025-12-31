@@ -14,6 +14,13 @@ in
     # Niri WM
     programs.niri.enable = true;
 
+    my.system.platform.home.imports = [
+      ({ config, pkgs, ... }: {
+        home.file.".config/niri/config.kdl".source = ./config/config.kdl;
+        home.file.".config/niri/own".source = ./config/own;
+      })
+    ];
+
     # DankMaterialShell
     programs.dms-shell = {
       enable = true;

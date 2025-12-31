@@ -1,0 +1,121 @@
+binds {
+    //----------------------------------------------// APPLICATIONS //-----------------------------------------------//
+
+    // Suggested binds for running programs: terminal, app launcher, screen locker.
+    Mod+T hotkey-overlay-title="Abrir una terminal" { spawn "kitty"; }
+
+    //-----------------------------------------------// PERIFERALS //------------------------------------------------//
+
+    // Audio
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Brightness
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    //-------------------------------------------------// WINDOWS //-------------------------------------------------//
+
+    // Close
+    Mod+Q       repeat=false     { close-window ; }
+    Mod+Shift+Q cooldown-ms=500  { close-window ; }
+
+    // Focus
+    Mod+Up    hotkey-overlay-title="Seleccionar ventana superior"     { focus-window-or-workspace-up  ; }
+    Mod+Down  hotkey-overlay-title="Seleccionar ventana de inferior"  { focus-window-or-workspace-down; }
+    Mod+Left  hotkey-overlay-title="Seleccionar ventana de izquierda" { focus-column-left             ; }
+    Mod+Right hotkey-overlay-title="Seleccionar ventana de derecha"   { focus-column-right            ; }
+    Mod+Home  hotkey-overlay-title="Seleccionar ventana primera"      { focus-column-first            ; }
+    Mod+End   hotkey-overlay-title="Seleccionar ventana última"       { focus-column-last             ; }
+
+    // Move
+    Mod+Ctrl+Up    hotkey-overlay-title="Mover ventana arriba"         { move-window-up-or-to-workspace-up    ; }
+    Mod+Ctrl+Down  hotkey-overlay-title="Mover ventana abajo"          { move-window-down-or-to-workspace-down; }
+  //Mod+Ctrl+Up    hotkey-overlay-title="Mover ventana arriba"         { move-column-to-workspace-up          ; }
+  //Mod+Ctrl+Down  hotkey-overlay-title="Mover ventana abajo"          { move-column-to-workspace-down        ; }
+    Mod+Ctrl+Left  hotkey-overlay-title="Mover ventana a la izquierda" { move-column-left                     ; }
+    Mod+Ctrl+Right hotkey-overlay-title="Mover ventana a la derecha"   { move-column-right                    ; }
+    Mod+Ctrl+Home  hotkey-overlay-title="Mover ventana al inicio"      { move-column-to-first                 ; }
+    Mod+Ctrl+End   hotkey-overlay-title="Mover ventana al final"       { move-column-to-last                  ; }
+    Mod+Ctrl+1     { move-column-to-workspace 1           ; }
+    Mod+Ctrl+2     { move-column-to-workspace 2           ; }
+    Mod+Ctrl+3     { move-column-to-workspace 3           ; }
+    Mod+Ctrl+4     { move-column-to-workspace 4           ; }
+    Mod+Ctrl+5     { move-column-to-workspace 5           ; }
+    Mod+Ctrl+6     { move-column-to-workspace 6           ; }
+    Mod+Ctrl+7     { move-column-to-workspace 7           ; }
+    Mod+Ctrl+8     { move-column-to-workspace 8           ; }
+    Mod+Ctrl+9     { move-column-to-workspace 9           ; }
+
+    // Focus
+    Mod+F       hotkey-overlay-title="Maximizar anchura de la ventana" { maximize-column  ; }
+    Mod+Shift+F hotkey-overlay-title="Alternar pantalla completa"      { fullscreen-window; }
+
+    // ColumnsInnerRows
+    Mod+Ctrl+Page_Up   hotkey-overlay-title="Añadir ventana a la columna"     { consume-window-into-column  ; }
+    Mod+Ctrl+Page_Down hotkey-overlay-title="Expulsar ventana a la columna"   { expel-window-from-column    ; }
+    Mod+W              hotkey-overlay-title="Alternar pestañas en la columna" { toggle-column-tabbed-display; }
+
+    // Sizing
+    Mod+R         hotkey-overlay-title="Alternar anchura de la ventana" { switch-preset-column-width ; }
+    Mod+Page_Up   hotkey-overlay-title="Alternar altura de la ventana"  { switch-preset-window-height; }
+    Mod+Page_Down hotkey-overlay-title="Restaurar altura de la ventana" { reset-window-height        ; }
+
+    // Floating
+    Mod+Minus       hotkey-overlay-title="Alternar ventana flotante"             { toggle-window-floating                  ; }
+    Mod+Shift+Minus hotkey-overlay-title="Alternar enfoque a ventanas flotantes" { switch-focus-between-floating-and-tiling; }
+
+    //-----------------------------------------------// WORKSPACES //------------------------------------------------//
+
+    // Overview
+    Mod+Tab repeat=false { toggle-overview; }
+
+    // Focus
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    // Move
+    Mod+Ctrl+Shift+Up   { move-workspace-up; }
+    Mod+Ctrl+Shift+Down { move-workspace-down; }
+
+    //------------------------------------------------// MONITORS //-------------------------------------------------//
+
+    // Focus
+    Mod+Alt+Up    { focus-monitor-up   ; }
+    Mod+Alt+Down  { focus-monitor-down ; }
+    Mod+Alt+Left  { focus-monitor-left ; }
+    Mod+Alt+Right { focus-monitor-right; }
+
+
+
+    //----------------------------------------------// MISCELLANEOUS //----------------------------------------------//
+
+    Mod+F1 { show-hotkey-overlay; }
+
+    // Screenshot
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    // The quit action will show a confirmation dialog to avoid accidental exits.
+    Mod+Shift+E { quit; }
+
+    // Applications such as remote-desktop clients and software KVM switches may
+    // request that niri stops processing the keyboard shortcuts defined here
+    // so they may, for example, forward the key presses as-is to a remote machine.
+    // It's a good idea to bind an escape hatch to toggle the inhibitor,
+    // so a buggy application can't hold your session hostage.
+    //
+    // The allow-inhibiting=false property can be applied to other binds as well,
+    // which ensures niri always processes them, even when an inhibitor is active.
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+}
