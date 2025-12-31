@@ -52,5 +52,10 @@ in
       compositor.name = "niri";
       configHome = "/home/${mainUser}";
     };
+
+    # Software
+    environment.systemPackages = with pkgs; [
+      kitty
+    ];
   };
 }
