@@ -62,5 +62,39 @@ in
     environment.systemPackages = with pkgs; [
       kitty
     ];
+
+    environment.sessionVariables = {
+      TERMINAL = "kitty";
+      XTERM = "kitty";
+    };
+
+    xdg = (
+      let
+        app = {
+          browser = "brave-browser.desktop";
+          terminal = "kitty.desktop";
+        };
+      in
+      {
+        mime = {
+          enable = true;
+          defaultApplications = {
+            "text/html" = app.browser;
+            "x-scheme-handler/http" = app.browser;
+            "x-scheme-handler/https" = app.browser;
+            "application/x-terminal-emulator" = app.terminal;
+          };
+        };
+
+        terminal-exec = {
+          enable = true;
+          settings = {
+            default = [
+              app.terminal
+            ];
+          };
+        };
+      }
+    );
   };
 }
