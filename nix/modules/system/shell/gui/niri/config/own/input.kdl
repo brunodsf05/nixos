@@ -4,6 +4,18 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Abrir una terminal" { spawn "kitty"; }
 
+    //--------------------------------------------------// DMS //----------------------------------------------------//
+
+    Mod+Space repeat=false { spawn-sh "dms ipc call spotlight toggle"; }
+    Mod+A repeat=false { spawn-sh "dms ipc call control-center toggle"; }
+    Mod+N repeat=false { spawn-sh "dms ipc call notifications toggle"; }
+    Mod+L repeat=false { spawn-sh "dms ipc call lock lock"; }
+    Mod+V repeat=false { spawn-sh "dms ipc call clipboard toggle"; }
+    Mod+Shift+A repeat=false { spawn-sh "dms ipc call dash toggle \"\""; }
+    Mod+Shift+C repeat=false { spawn-sh "dms color pick -a"; }
+    Mod+Shift+L repeat=false { spawn-sh "dms ipc call powermenu toggle"; }
+    Ctrl+Shift+Escape repeat=false { spawn-sh "dms ipc call processlist toggle"; }
+
     //-----------------------------------------------// PERIFERALS //------------------------------------------------//
 
     // Audio
