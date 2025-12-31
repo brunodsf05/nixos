@@ -15,9 +15,14 @@ in
     programs.niri.enable = true;
 
     my.system.platform.home.imports = [
-      ({ config, pkgs, ... }: {
-        home.file.".config/niri/config.kdl".source = ./config/config.kdl;
-        home.file.".config/niri/own".source = ./config/own;
+      ({ config, pkgs, ... }: let
+        flakePath = "${config.home.homeDirectory}/nixos"; # TODO: Make flake path generated in a function from global.nix
+        configPath = "${flakePath}/nix/modules/system/shell/gui/niri/config"; # WARNING: Is not dynamic so changes can break
+        mkSymlink = relativePath: config.lib.file.mkOutOfStoreSymlink "${configPath}/${relativePath}";
+      in {
+        home.file.".config/niri/config.kdl".source = mkSymlink "config.kdl";
+        home.file.".config/niri/own".source = mkSymlink "own";
+        home.file.".config/niri/own".recursive = true;
       })
     ];
 
