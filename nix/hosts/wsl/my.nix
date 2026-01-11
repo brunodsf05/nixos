@@ -20,6 +20,7 @@
   };
 
   my.features = {
+    development.editor.cli.enable = true;
     development.git.enable = true;
     development.vscode_remote.enable = true;
   };
