@@ -33,7 +33,7 @@
 
   my.features = {
     apps.enable = true;
-    development.editor.enable = true;
+    development.editor.gui.enable = true;
     development.git.enable = true;
   };
 }
