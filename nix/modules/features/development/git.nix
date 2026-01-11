@@ -11,7 +11,7 @@ in
   config = lib.mkIf cfg.enable
   {
     my.system.platform.home.imports = [
-      ({ ... }: {
+      ({ pkgs, ... }: {
         programs.git = {
           enable = true;
           settings = {
@@ -24,6 +24,10 @@ in
         programs.gh = {
           enable = true;
         };
+
+        home.packages = with pkgs; [
+          git-filter-repo
+        ];
       })
     ];
   };
