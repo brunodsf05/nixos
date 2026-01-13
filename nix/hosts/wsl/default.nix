@@ -12,5 +12,5 @@ in
 
   wsl.enable = true;
   wsl.defaultUser = cfgRoot.system.host.main_user.name;
-  wsl.interop.includePath = false;
+  wsl.interop.includePath = true;
 }
