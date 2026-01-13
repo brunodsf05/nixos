@@ -8,6 +8,9 @@ in
     inputs.home-manager.nixosModules.home-manager
     ./configuration.nix
     ./hardware.nix
+    ./system.nix
     ./my.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 }
