@@ -12,7 +12,7 @@ in
   {
     programs.nh = {
       enable = true;
-      flake = "/home/${cfgRoot.system.host.main_user.name}/nixos";
+      flake = "/home/${cfgRoot.system.host.main_user.name}/NixOS";
     };
   };
 }

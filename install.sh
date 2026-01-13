@@ -5,7 +5,7 @@ set -e
 
 LOG_FILE="$HOME/nixos-install.log"
 REPO_URL="https://github.com/brunodsf05/nixos.git"
-REPO_SRC="$HOME/nixos"
+REPO_SRC="$HOME/NixOS"
 
 exec > >(tee -a "$LOG_FILE") 2>&1
 

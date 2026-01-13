@@ -24,6 +24,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/brunodsf05/nixos/main/instal
 ```
 
 This will automatically:
-1.  **Clone** this flake's repository to `$HOME/nixos`.
+1.  **Clone** this flake's repository to `$HOME/NixOS`.
 2.  Prompt you to **select a profile**.
 3.  **Rebuild the system** and immediately switch to it.
