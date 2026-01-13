@@ -12,6 +12,7 @@ in
   {
     environment.systemPackages = with pkgs; [
       nodejs_24
+      pnpm
     ];
   };
 }
