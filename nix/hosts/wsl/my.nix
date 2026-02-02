@@ -15,6 +15,7 @@
 
     environment = {
       locale.enable = false;
+      software.executable.enable = false;
     };
   };
 

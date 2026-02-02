@@ -22,10 +22,6 @@
     shell = {
       gui.niri.enable = true;
     };
-
-    environment = {
-      software.executable.enable = true;
-    };
   };
 
   my.features = {
