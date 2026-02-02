@@ -3,7 +3,6 @@
 {
   my.system = {
     platform = {
-      nixos.nh.enable = true;
       nixos.system.stateVersion = "25.05";
 
       home.enable = true;
