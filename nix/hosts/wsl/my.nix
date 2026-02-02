@@ -12,6 +12,10 @@
     host = {
       main_user.name = "nixos";
     };
+
+    environment = {
+      locale.enable = false;
+    };
   };
 
   my.features = {

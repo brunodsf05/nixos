@@ -24,7 +24,6 @@
     };
 
     environment = {
-      locale.enable = true;
       software.executable.enable = true;
     };
   };
