@@ -13,10 +13,6 @@
     host = {
       main_user.name = "nixos";
     };
-
-    shell = {
-      cli.enable = true;
-    };
   };
 
   my.features = {

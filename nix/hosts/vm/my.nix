@@ -21,7 +21,6 @@
     };
 
     shell = {
-      cli.enable = true;
       gui.niri.enable = true;
     };
 
