@@ -7,10 +7,10 @@ in
   imports = [
     inputs.nixos-wsl.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
+    ./interop.nix
     ./my.nix
   ];
 
   wsl.enable = true;
   wsl.defaultUser = cfgRoot.system.host.main_user.name;
-  wsl.interop.includePath = true;
 }
