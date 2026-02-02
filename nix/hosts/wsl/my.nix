@@ -20,8 +20,6 @@
   };
 
   my.features = {
-    development.editor.cli.enable = true;
-    development.tooling.enable = true;
     development.vscode_remote.enable = true;
   };
 }
