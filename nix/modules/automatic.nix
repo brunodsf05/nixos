@@ -3,25 +3,27 @@
 let
   inherit (global.fun.mkModule __curPos.file config) cfgRoot;
   var = cfgRoot.variables;
+
+  d = lib.mkDefault;
 in
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
 
   ### SYSTEM ###
-  my.system.platform.nixos.nh.enable = lib.mkDefault true;
-  my.system.platform.home.enable = lib.mkDefault true;
+  my.system.platform.nixos.nh.enable = d true;
+  my.system.platform.home.enable = d true;
 
-  my.system.shell.cli.enable = lib.mkDefault true;
-  my.system.shell.gui.enable = lib.mkDefault var.has.gui;
+  my.system.shell.cli.enable = d true;
+  my.system.shell.gui.enable = d var.has.gui;
 
-  my.system.environment.locale.enable = lib.mkDefault true;
-  my.system.environment.software.executable.enable = lib.mkDefault true;
+  my.system.environment.locale.enable = d true;
+  my.system.environment.software.executable.enable = d true;
 
   ### FEATURES ###
-  my.features.apps.enable = lib.mkDefault var.has.gui;
+  my.features.apps.enable = d var.has.gui;
 
-  my.features.development.editor.cli.enable = lib.mkDefault true;
-  my.features.development.editor.gui.enable = lib.mkDefault var.has.gui;
-  my.features.development.git.enable = lib.mkDefault true;
-  my.features.development.tooling.enable = lib.mkDefault true;
+  my.features.development.editor.cli.enable = d true;
+  my.features.development.editor.gui.enable = d var.has.gui;
+  my.features.development.git.enable = d true;
+  my.features.development.tooling.enable = d true;
 }
