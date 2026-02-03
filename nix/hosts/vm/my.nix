@@ -21,10 +21,6 @@
         };
       };
     };
-
-    shell = {
-      gui.niri.enable = true;
-    };
   };
 
   my.features = {

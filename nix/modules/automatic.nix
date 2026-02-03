@@ -10,6 +10,7 @@ in
   my.system.platform.nixos.nh.enable = lib.mkDefault true;
   my.system.platform.home.enable = lib.mkDefault true;
   my.system.shell.cli.enable = lib.mkDefault true;
+  my.system.shell.gui.enable = lib.mkDefault var.has.gui;
   my.system.environment.locale.enable = lib.mkDefault true;
   my.system.environment.software.executable.enable = lib.mkDefault true;
   my.features.development.editor.cli.enable = true;
