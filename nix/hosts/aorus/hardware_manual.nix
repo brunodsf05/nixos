@@ -1,16 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  # Configure keymap in X11
+  # Keyboard layout
+  console.keyMap = "es";
   services.xserver.xkb = {
     layout = "es";
     variant = "";
   };
 
-  # Configure console keymap
-  console.keyMap = "es";
-
-  # Input/Output
+  # Peripherals
   networking.networkmanager.enable = true;
 
   services.pulseaudio.enable = false;
