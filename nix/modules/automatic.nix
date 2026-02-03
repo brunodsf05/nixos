@@ -14,7 +14,7 @@ in
   my.system.platform.home.enable = d true;
 
   my.system.shell.cli.enable = d true;
-  my.system.shell.gui.enable = d var.has.gui;
+  my.system.shell.gui.niri.enable = d var.has.gui;
 
   my.system.environment.locale.enable = d true;
   my.system.environment.software.executable.enable = d true;
