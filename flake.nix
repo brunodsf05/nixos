@@ -26,7 +26,7 @@
 
   outputs = inputs@{ self, nixpkgs, ... }:
   let
-    global = import ./global.nix;
+    global = import ./nix/global.nix;
 
     mkHost = host: system: nixpkgs.lib.nixosSystem {
       inherit system;

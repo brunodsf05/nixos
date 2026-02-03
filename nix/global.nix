@@ -1,18 +1,18 @@
 # This file contains global vars not meant for configuration.
-# If you want global configuration go to `./nix/modules/automatic.nix`.
+# If you want global configuration go to `./modules/automatic.nix`.
 
 rec {
   cfg = {
     os.name = "neosh";
     path = {
-      modules = ./nix/modules;
+      modules = ./modules;
     };
     mainUser.config = {
       description = "Bruno";
     };
   };
 
-  log = import ./nix/lib/logger.nix {
+  log = import ./lib/logger.nix {
     prefix = cfg.os.name;
     suffixes = [
       "config"
@@ -24,14 +24,14 @@ rec {
   };
 
   fun = {
-    mkModule = import ./nix/lib/mk_module.nix {
+    mkModule = import ./lib/mk_module.nix {
       prefix = "my";
       modulesPath = cfg.path.modules;
     };
 
     importModules = (
       let
-        getModules = import ./nix/lib/get_modules.nix {
+        getModules = import ./lib/get_modules.nix {
           lastmodFilename = ".lastmod";
           logger = path: log.msg.import path;
         };
