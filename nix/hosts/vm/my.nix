@@ -9,8 +9,6 @@
   my.system = {
     platform = {
       nixos.system.stateVersion = "25.11";
-
-      home.enable = true;
       home.stateVersion = "25.11";
     };
 
