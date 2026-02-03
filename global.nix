@@ -30,7 +30,7 @@ rec {
       let
         getModules = import ./nix/lib/get_modules.nix {
           lastmodFilename = ".lastmod";
-          logger = path: "[import] ${path}";
+          logger = path: log.msg.import path;
         };
       in
         map import (getModules cfg.path.modules)
