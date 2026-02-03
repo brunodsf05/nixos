@@ -9,6 +9,7 @@ in
 
     extra = {
       gui.enable = lib.mkEnableOption "GUI code editors" // { default = true; };
+      arduino.enable = lib.mkEnableOption "GUI code editors" // { default = true; };
     };
   };
 
@@ -20,6 +21,10 @@ in
           # Editors
           vscode-fhs
           zed-editor-fhs
+        ]))
+        (lib.mkIf cfg.extra.gui.enable && cfg.extra.arduino.enable (with pkgs; [
+          # Editors
+          arduino-ide
         ]))
         [
           # Editors
