@@ -19,7 +19,7 @@ in
       qbittorrent
       # stremio
       thunderbird
-      upscaler
+      # upscaler
     ];
   };
 }
