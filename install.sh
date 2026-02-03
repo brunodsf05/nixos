@@ -3,6 +3,7 @@
 # --- OPTIONS --- #
 
 profiles=(
+    "aorus"
     "vm"
     "wsl"
 )
