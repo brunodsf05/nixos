@@ -1,5 +1,9 @@
 { config, global, lib, pkgs, ... }:
 
+let
+  inherit (global.fun.mkModule __curPos.file config) cfgRoot;
+  var = cfgRoot.variables;
+in
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
 

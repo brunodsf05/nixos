@@ -1,6 +1,10 @@
 { config, global, inputs, lib, pkgs, ... }:
 
 {
+  my.variables = {
+    has.cli = true;
+  };
+
   my.system = {
     platform = {
       nixos.system.stateVersion = "25.05";
