@@ -29,4 +29,6 @@ in
   my.features.development.editor.gui.enable = d var.has.gui;
   my.features.development.git.enable = d true;
   my.features.development.tooling.enable = d true;
+
+  my.features.fonts.enable = d var.has.gui;
 }
