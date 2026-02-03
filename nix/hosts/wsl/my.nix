@@ -1,27 +1,27 @@
 { config, global, inputs, lib, pkgs, ... }:
 
 {
-  my.variables = {
-    has.cli = true;
+  my.features = {
+    development.vscode_remote.enable = true;
   };
 
   my.system = {
-    platform = {
-      nixos.system.stateVersion = "25.05";
-      home.stateVersion = "25.11";
+    environment = {
+      locale.enable = false;
+      software.executable.enable = false;
     };
 
     host = {
       main_user.name = "nixos";
     };
 
-    environment = {
-      locale.enable = false;
-      software.executable.enable = false;
+    platform = {
+      home.stateVersion = "25.11";
+      nixos.system.stateVersion = "25.05";
     };
   };
 
-  my.features = {
-    development.vscode_remote.enable = true;
+  my.variables = {
+    has.cli = true;
   };
 }
