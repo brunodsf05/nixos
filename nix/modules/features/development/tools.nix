@@ -13,7 +13,7 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable lib.mkMerge [
+  config = lib.mkIf cfg.enable (lib.mkMerge [
     (lib.mkIf cfg.extra.gui.enable { /* ... */ })
     {
       environment.systemPackages = lib.mkMerge [
@@ -22,18 +22,18 @@ in
           vscode-fhs
           zed-editor-fhs
         ]))
-        (lib.mkIf cfg.extra.gui.enable && cfg.extra.arduino.enable (with pkgs; [
+        (lib.mkIf (cfg.extra.gui.enable && cfg.extra.arduino.enable) (with pkgs; [
           # Editors
           arduino-ide
         ]))
-        [
+        (with pkgs; [
           # Editors
           helix
           # SDKs
           nodejs_24
           pnpm
-        ]
+        ])
       ];
     }
-  ];
+  ]);
 }
