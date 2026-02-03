@@ -29,6 +29,8 @@ in
         (with pkgs; [
           # Editors
           helix
+          # LSPs
+          nixd
           # SDKs
           nodejs_24
           pnpm
