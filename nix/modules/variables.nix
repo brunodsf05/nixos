@@ -8,6 +8,7 @@ let
 in
 {
   options = wrapInModule {
+    has.boot = lib.mkEnableOption "flag that tells if the host can boot";
     has.cli = lib.mkEnableOption "flag that tells if the host has a CLI";
     has.gui = lib.mkEnableOption "flag that tells if the host has a GUI";
   };

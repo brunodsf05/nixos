@@ -18,6 +18,7 @@
   };
 
   my.variables = {
+    has.boot = true;
     has.cli = true;
     has.gui = true;
   };
