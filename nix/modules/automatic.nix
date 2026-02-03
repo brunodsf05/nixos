@@ -13,6 +13,9 @@ in
   my.system.environment.locale.enable = d true;
   my.system.environment.software.executable.enable = d true;
 
+  my.system.host.main_user.config.description = d "Bruno";
+  my.system.host.main_user.name = d "bruno";
+
   my.system.platform.home.enable = d true;
   my.system.platform.nixos.nh.enable = d true;
 
