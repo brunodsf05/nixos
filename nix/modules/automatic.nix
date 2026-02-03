@@ -20,7 +20,8 @@ in
   my.system.platform.nixos.nh.enable = d true;
 
   my.system.shell.cli.enable = d true;
-  my.system.shell.gui.niri.enable = d var.has.gui;
+  my.system.shell.gui.cosmic.enable = d var.has.gui;
+  # my.system.shell.gui.niri.enable = d var.has.gui;
 
   ### FEATURES ###
   my.features.apps.enable = d var.has.gui;
