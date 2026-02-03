@@ -14,13 +14,17 @@ in
     (lib.mkIf cfg.gui.enable { /* ... */ })
     {
       environment.systemPackages = lib.mkMerge [
-        (lib.mkIf cfg.cli.enable (with pkgs; [
-          helix
-        ]));
         (lib.mkIf cfg.gui.enable (with pkgs; [
           vscode-fhs
           zed-editor-fhs
-        ]));
+        ]))
+        [
+          # Editors
+          helix
+          # SDKs
+          nodejs_24
+          pnpm
+        ]
       ];
     }
   ];
