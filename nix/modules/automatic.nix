@@ -26,8 +26,8 @@ in
   my.features.apps.enable = d var.has.gui;
 
   my.features.development.git.enable = d true;
-  my.features.development.tools.cli.enable = d true;
-  my.features.development.tools.gui.enable = d var.has.gui;
+  my.features.development.tools.enable = d true;
+  my.features.development.tools.extra.gui.enable = d var.has.gui;
 
   my.features.fonts.enable = d var.has.gui;
 }

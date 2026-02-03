@@ -5,16 +5,19 @@ let
 in
 {
   options = wrapInModule {
-    gui.enable = lib.mkEnableOption "GUI code editors";
-    cli.enable = lib.mkEnableOption "CLI code editors";
+    enable = lib.mkEnableOption "programming tools";
+
+    extra = {
+      gui.enable = lib.mkEnableOption "GUI code editors" // { default = true; };
+    };
   };
 
-  config = lib.mkMerge [
-    (lib.mkIf cfg.cli.enable { /* ... */ })
-    (lib.mkIf cfg.gui.enable { /* ... */ })
+  config = lib.mkIf cfg.enable lib.mkMerge [
+    (lib.mkIf cfg.extra.gui.enable { /* ... */ })
     {
       environment.systemPackages = lib.mkMerge [
-        (lib.mkIf cfg.gui.enable (with pkgs; [
+        (lib.mkIf cfg.extra.gui.enable (with pkgs; [
+          # Editors
           vscode-fhs
           zed-editor-fhs
         ]))
