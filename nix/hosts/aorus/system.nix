@@ -25,7 +25,4 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # Software
-  programs.firefox.enable = true;
 }
