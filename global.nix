@@ -1,3 +1,6 @@
+# This file contains global vars not meant for configuration.
+# If you want global configuration go to `./nix/modules/automatic.nix`.
+
 rec {
   cfg = {
     os.name = "neosh";
