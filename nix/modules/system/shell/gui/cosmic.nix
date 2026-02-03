@@ -15,6 +15,7 @@ in
     services.desktopManager.cosmic.enable = true;
     services.desktopManager.cosmic.xwayland.enable = true;
 
+    /* TODO: Reenable later
     # Software
     environment.cosmic.excludePackages = with pkgs; [
       cosmic-player
@@ -61,5 +62,6 @@ in
         };
       }
     );
+    */
   };
 }
