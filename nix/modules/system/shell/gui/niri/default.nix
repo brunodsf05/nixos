@@ -71,7 +71,7 @@ in
     xdg = (
       let
         app = {
-          browser = "brave-browser.desktop";
+          browser = "firefox.desktop";
           terminal = "kitty.desktop";
         };
       in

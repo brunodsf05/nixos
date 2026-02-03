@@ -11,7 +11,6 @@ in
   config = lib.mkIf cfg.enable
   {
     environment.systemPackages = with pkgs; [
-      brave
       gearlever
       gimp
       inkscape
@@ -21,5 +20,7 @@ in
       thunderbird
       # upscaler
     ];
+
+    programs.firefox.enable = true;
   };
 }
