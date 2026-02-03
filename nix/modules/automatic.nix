@@ -10,6 +10,8 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
 
   ### SYSTEM ###
+  my.system.boot.limine.enable = d var.has.boot;
+
   my.system.environment.locale.enable = d true;
   my.system.environment.software.executable.enable = d true;
 
