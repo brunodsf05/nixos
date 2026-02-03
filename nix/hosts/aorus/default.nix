@@ -1,8 +1,5 @@
-{ config, global, inputs, lib, pkgs, ... }:
+{ inputs, ... }:
 
-let
-  inherit (global.fun.mkModule null config) cfgRoot;
-in
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager

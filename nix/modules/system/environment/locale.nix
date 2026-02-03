@@ -1,4 +1,4 @@
-{ config, global, inputs, lib, pkgs, ... }:
+{ config, global, lib, ... }:
 
 let
   inherit (global.fun.mkModule __curPos.file config) cfg wrapInModule;
@@ -60,7 +60,7 @@ in
 
     # English XDG folders
     my.system.platform.home.imports = lib.mkIf cfg.overrides.forceEnglishXdgFolders [
-      ({ config, ... }: {
+      ({ ... }: {
         xdg.userDirs = {
           enable = true;
           createDirectories = true;

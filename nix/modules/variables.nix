@@ -1,10 +1,10 @@
-{ config, global, inputs, lib, pkgs, ... }:
+{ config, global, lib, ... }:
 
 # This file defines variables that are read by `automatic.nix`.
 # The values are set per-host in `./<host>/my.nix`.
 
 let
-  inherit (global.fun.mkModule __curPos.file config) cfg wrapInModule;
+  inherit (global.fun.mkModule __curPos.file config) wrapInModule;
 in
 {
   options = wrapInModule {

@@ -1,4 +1,4 @@
-{ config, global, inputs, lib, pkgs, ... }:
+{ ... }:
 
 {
   my.system = {

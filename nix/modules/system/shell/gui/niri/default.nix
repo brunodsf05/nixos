@@ -1,4 +1,4 @@
-{ config, global, inputs, lib, pkgs, ... }:
+{ config, global, lib, pkgs, ... }:
 
 let
   inherit (global.fun.mkModule __curPos.file config) cfg cfgRoot wrapInModule;
@@ -15,7 +15,7 @@ in
     programs.niri.enable = true;
 
     my.system.platform.home.imports = [
-      ({ config, pkgs, ... }: let
+      ({ config, ... }: let
         flakePath = "${config.home.homeDirectory}/NixOS"; # TODO: Make flake path generated in a function from global.nix
         configPath = "${flakePath}/nix/modules/system/shell/gui/niri/config"; # WARNING: Is not dynamic so changes can break
         mkSymlink = relativePath: config.lib.file.mkOutOfStoreSymlink "${configPath}/${relativePath}";

@@ -1,7 +1,7 @@
-{ config, global, inputs, lib, pkgs, ... }:
+{ config, global, lib, ... }:
 
 let
-  inherit (global.fun.mkModule __curPos.file config) cfg cfgRoot wrapInModule;
+  inherit (global.fun.mkModule __curPos.file config) cfg wrapInModule;
 in
 {
   options = wrapInModule {

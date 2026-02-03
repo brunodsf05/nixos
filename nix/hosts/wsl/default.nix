@@ -1,4 +1,4 @@
-{ config, global, inputs, lib, pkgs, ... }:
+{ config, global, inputs, ... }:
 
 let
   inherit (global.fun.mkModule null config) cfgRoot;
