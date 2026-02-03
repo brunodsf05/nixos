@@ -10,17 +10,18 @@ in
   };
 
   config = lib.mkMerge [
-    (lib.mkIf cfg.gui.enable {
-      environment.systemPackages = with pkgs; [
-        vscode-fhs
-        zed-editor-fhs
+    (lib.mkIf cfg.cli.enable { /* ... */ })
+    (lib.mkIf cfg.gui.enable { /* ... */ })
+    {
+      environment.systemPackages = lib.mkMerge [
+        (lib.mkIf cfg.cli.enable (with pkgs; [
+          helix
+        ]));
+        (lib.mkIf cfg.gui.enable (with pkgs; [
+          vscode-fhs
+          zed-editor-fhs
+        ]));
       ];
-    })
-
-    (lib.mkIf cfg.cli.enable {
-      environment.systemPackages = with pkgs; [
-        helix
-      ];
-    })
+    }
   ];
 }
