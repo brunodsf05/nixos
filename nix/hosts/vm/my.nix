@@ -22,8 +22,4 @@
       };
     };
   };
-
-  my.features = {
-    development.editor.gui.enable = true;
-  };
 }
