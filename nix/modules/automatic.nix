@@ -11,6 +11,7 @@ in
 
   ### SYSTEM ###
   my.system.boot.limine.enable = d var.has.boot;
+  my.system.boot.plymouth.enable = d var.has.boot;
 
   my.system.environment.locale.enable = d true;
   my.system.environment.software.executable.enable = d true;
