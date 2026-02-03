@@ -10,14 +10,14 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
 
   ### SYSTEM ###
-  my.system.platform.nixos.nh.enable = d true;
+  my.system.environment.locale.enable = d true;
+  my.system.environment.software.executable.enable = d true;
+
   my.system.platform.home.enable = d true;
+  my.system.platform.nixos.nh.enable = d true;
 
   my.system.shell.cli.enable = d true;
   my.system.shell.gui.niri.enable = d var.has.gui;
-
-  my.system.environment.locale.enable = d true;
-  my.system.environment.software.executable.enable = d true;
 
   ### FEATURES ###
   my.features.apps.enable = d var.has.gui;
