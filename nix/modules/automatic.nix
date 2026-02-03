@@ -18,6 +18,8 @@ in
   my.system.environment.software.executable.enable = lib.mkDefault true;
 
   ### FEATURES ###
+  my.features.apps.enable = lib.mkDefault var.has.gui;
+
   my.features.development.editor.cli.enable = true;
   my.features.development.git.enable = lib.mkDefault true;
   my.features.development.tooling.enable = true;
