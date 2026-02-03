@@ -118,6 +118,19 @@ fi
 printf "\n\033[32mWhat is your system?\033[0m\n"
 chosen_profile="$(select_string "${profiles[@]}")"
 
+hw_cfg_nix_origin_path="/etc/nixos/hardware-configuration.nix"
+if [ -f "$hw_cfg_nix_origin_path" ]; then
+    hw_cfg_nix_target_path="$REPO_SRC/nix/hosts/$chosen_profile/hardware_auto.nix"
+    printf "\n\033[32mDo you want to copy your \033[36m$hw_cfg_nix_origin_path\033[32m to \033[36m$hw_cfg_nix_target_path\033[32m?\033[0m\n"
+    copy_choice="$(select_string "yes" "no")"
+    if [ "$copy_choice" = "yes" ]; then
+        install_user_name="$(id -un)"
+        mkdir -p "$(dirname "$hw_cfg_nix_target_path")"
+        sudo cp "$hw_cfg_nix_origin_path" "$hw_cfg_nix_target_path"
+        sudo chown "$install_user_name" "$hw_cfg_nix_target_path"
+    fi
+fi
+
 printf "\n\033[32mWhat rebuild method will you use?\033[0m\n"
 chosen_rebuild_method="$(select_string "${rebuild_methods[@]}")"
 
