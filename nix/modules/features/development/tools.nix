@@ -20,7 +20,7 @@ in
         (lib.mkIf cfg.extra.gui.enable (with pkgs; [
           # Editors
           vscode-fhs
-          zed-editor-fhs
+          zed-editor
         ]))
         (lib.mkIf (cfg.extra.gui.enable && cfg.extra.arduino.enable) (with pkgs; [
           # Editors
