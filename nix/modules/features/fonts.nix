@@ -10,7 +10,7 @@ in
 
   config = lib.mkIf cfg.enable
   {
-    environment.systemPackages = [
+    fonts.packages = [
       pkgs.nerd-fonts.cousine # terminal
       pkgs.nerd-fonts.jetbrains-mono # editor
     ];
