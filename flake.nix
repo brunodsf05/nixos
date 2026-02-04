@@ -22,6 +22,8 @@
 
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
