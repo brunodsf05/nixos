@@ -22,5 +22,13 @@ in
     ];
 
     programs.firefox.enable = true;
+
+    my.system.environment.software.flatpak = {
+      enable = lib.mkDefault true;
+      packages = [
+        "com.brave.Browser"
+        "com.heroicgameslauncher.hgl"
+      ];
+    };
   };
 }
