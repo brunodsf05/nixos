@@ -27,7 +27,6 @@ in
       enable = lib.mkDefault true;
       packages = [
         "com.brave.Browser"
-        "com.heroicgameslauncher.hgl"
       ];
     };
   };

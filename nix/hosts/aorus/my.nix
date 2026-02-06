@@ -21,6 +21,10 @@
     };
   };
 
+  my.features = {
+    gaming.enable = true;
+  };
+
   my.variables = {
     has.boot = true;
     has.cli = true;
