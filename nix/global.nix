@@ -29,6 +29,10 @@ rec {
       modulesPath = cfg.path.modules;
     };
 
+    mkRelPath = import ./lib/mk_relpath {
+      rootStorePath = ./.;
+    };
+
     importModules = (
       let
         getModules = import ./lib/get_modules.nix {

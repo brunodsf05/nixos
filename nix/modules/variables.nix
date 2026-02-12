@@ -11,5 +11,13 @@ in
     has.boot = lib.mkEnableOption "flag that tells if the host can boot";
     has.cli = lib.mkEnableOption "flag that tells if the host has a CLI";
     has.gui = lib.mkEnableOption "flag that tells if the host has a GUI";
+
+    fun.mkAbsPath = lib.mkOption {
+      type = lib.types.lambda;
+      description = ''
+        Receives a store path and returns an absolute path.
+      '';
+      default = null;
+    };
   };
 }
