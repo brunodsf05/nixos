@@ -71,6 +71,9 @@ else
 let
   # Functions
   str = import ./strings.nix;
+  mkRelPath = import ./mk_relpath.nix {
+    rootStorePath = modulesPath;
+  };
 
   fun = {
     pathToLeafs =
@@ -115,8 +118,7 @@ in
         ""
       else
         path
-        |> toString
-        |> (str.removePrefix (toString modulesPath + "/"))
+        |> mkRelPath
         |> (str.removeSuffix ".nix")
         |> (str.removeSuffix "/default");
 
