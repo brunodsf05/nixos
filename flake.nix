@@ -45,6 +45,7 @@
   in
   {
     nixosConfigurations = {
+      inspiron5421 = mkHost "inspiron5421" "x86_64-linux";
       aorus = mkHost "aorus" "x86_64-linux";
       wsl = mkHost "wsl" "x86_64-linux";
       vm = mkHost "vm" "x86_64-linux";

@@ -3,6 +3,7 @@
 # --- OPTIONS --- #
 
 profiles=(
+    "inspiron5421"
     "aorus"
     "vm"
     "wsl"
