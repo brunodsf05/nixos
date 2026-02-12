@@ -60,7 +60,12 @@ in
     # Software
     environment.systemPackages = with pkgs; [
       kitty
+      nautilus
     ];
+
+    # Automount disks
+    services.udisks2.enable = true;
+    services.gvfs.enable = true;
 
     environment.sessionVariables = {
       TERMINAL = "kitty";
