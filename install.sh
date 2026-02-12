@@ -104,7 +104,7 @@ cat <<EOF
          ▟███▛  ▜███▙       ▜███▙
          ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘
 EOF
-printf "Dotfiles installer!"
+printf "Dotfiles installer!\n"
 printf "\033[90mTo cancel please use ctrl-c\033[0m\n"
 
 if [ "$did_clone" -eq 1 ]; then
