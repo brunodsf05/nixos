@@ -61,6 +61,8 @@ in
     environment.systemPackages = with pkgs; [
       kitty
       nautilus
+      adwaita-icon-theme
+      morewaita-icon-theme
     ];
 
     # Automount disks
