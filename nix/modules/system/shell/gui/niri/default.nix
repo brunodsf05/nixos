@@ -36,7 +36,6 @@ in
       };
 
       enableSystemMonitoring = true;
-      enableClipboard = true;
       enableDynamicTheming = true;
       enableAudioWavelength = true;
       enableCalendarEvents = true;
