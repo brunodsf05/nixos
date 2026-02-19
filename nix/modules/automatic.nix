@@ -10,7 +10,7 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
 
   ### VARIABLES ###
-  my.variables.fun.mkAbsPath = (storePath: "${config.programs.nh.flake}/${global.fun.mkRelPath storePath}"); # TODO: Smells bad, might be better to define in this file the flake path
+  my.variables.fun.mkAbsPath = (storePath: "${config.programs.nh.flake}/${global.fun.mkRelPath storePath}");
 
   ### SYSTEM ###
   my.system.boot.limine.enable = d var.has.boot;
