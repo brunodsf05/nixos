@@ -7,9 +7,6 @@ rec {
     path = {
       modules = ./modules;
     };
-    mainUser.config = {
-      description = "Bruno";
-    };
   };
 
   log = import ./lib/logger.nix {
