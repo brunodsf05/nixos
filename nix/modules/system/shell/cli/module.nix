@@ -2,33 +2,27 @@
 
 {
   # Shell
-  home.shellAliases = {
-    c = "clear";
-    cd = "z";
-    ff = "fastfetch";
-    gita = "git add .";
-    gitc = "git commit -m";
-    gitca = "git commit --amend";
-    gitl = "git log --all --graph --oneline";
-    gits = "git status";
-  };
-
   home.sessionVariables = {
     EDITOR = "micro";
     VISUAL = "micro";
   };
 
-  programs.bash = {
+  programs.fish = {
     enable = true;
-    enableCompletion = true;
-    initExtra = ''
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        yazi "$@" --cwd-file="$tmp"
-        IFS= read -r -d '\' cwd < "$tmp"
-        [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-        rm -f -- "$tmp"
-      }
+    shellAbbrs = {
+      # General
+      c = "clear";
+      ff = "fastfetch";
+      cff = "clear && fastfetch";
+      # Git
+      gita = "git add .";
+      gitc = { expansion = "git commit -m '%'"; setCursor = true; };
+      gitca = "git commit --amend";
+      gitl = "git log --all --graph --oneline";
+      gits = "git status";
+    };
+    interactiveShellInit = ''
+      set -U fish_greeting
     '';
   };
 
@@ -39,7 +33,7 @@
 
   programs.eza = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
     icons = "auto";
   };
 
@@ -50,7 +44,7 @@
 
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.micro = {
@@ -63,17 +57,18 @@
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
     settings = import ./settings/starship.nix;
   };
 
   programs.yazi = {
     enable = true;
+    enableFishIntegration = true;
   };
 
   programs.zoxide = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
     # flags = [
     #   "--cmd cd"
     # ];
