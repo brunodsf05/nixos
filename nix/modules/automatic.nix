@@ -8,6 +8,7 @@ let
 in
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
+  documentation.nixos.enable = d false;
 
   ### VARIABLES ###
   my.variables.fun.mkAbsPath = (storePath: "${config.programs.nh.flake}/${global.fun.mkRelPath storePath}");
