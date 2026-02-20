@@ -26,7 +26,7 @@ rec {
       modulesPath = cfg.path.modules;
     };
 
-    mkRelPath = import ./lib/mk_relpath {
+    mkRelPath = import ./lib/mk_relpath.nix {
       rootStorePath = ./.;
     };
 
