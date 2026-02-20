@@ -20,8 +20,11 @@
     pulse.enable = true;
   };
 
-  # Hardware
+  # Graphics
   hardware.graphics.enable = true;
+  services.xserver.videoDrivers = ["virtio"];
+
+  # Virtualization
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
   # virtualisation.vmware.guest.enable = true;
