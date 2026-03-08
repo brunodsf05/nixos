@@ -11,7 +11,7 @@ in
   config = lib.mkIf cfg.enable
   {
     environment.systemPackages = with pkgs; [
-      gearlever
+      # gearlever
       gimp
       inkscape
       keepassxc
