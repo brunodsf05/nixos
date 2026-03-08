@@ -19,7 +19,7 @@ in
       environment.systemPackages = lib.mkMerge [
         (lib.mkIf cfg.extra.gui.enable (with pkgs; [
           # Editors
-          vscode-fhs
+          vscode
           zed-editor
         ]))
         (lib.mkIf (cfg.extra.gui.enable && cfg.extra.arduino.enable) (with pkgs; [
