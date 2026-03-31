@@ -2,10 +2,6 @@
 
 {
   my.system = {
-    boot = {
-      limine.windows.uuid = "81ebe4b4-0fff-44d5-be82-26d142dc11d6";
-    };
-
     host = {
       main_user = {
         config = {
